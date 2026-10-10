@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Slider Library | Vanilla JS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <h1 class="title">Image Slider Library</h1>
+    <p class="subtitle">Vanilla JS &bull; Sliding Track &bull; Infinite Loop &bull; Responsive</p>
+
+    <!-- Slider component root -->
+    <div class="slider" id="imageSlider" aria-label="Image slider" aria-roledescription="carousel">
+      <!-- Viewport mask -->
+      <div class="slider-viewport">
+        <!-- Sliding track (moved with translateX) -->
+        <div class="slider-track">
+          <!-- Slides injected by slider.js from images array -->
+        </div>
+      </div>
+
+      <!-- Navigation arrows -->
+      <button class="slider-btn prev" aria-label="Previous image">&#10094;</button>
+      <button class="slider-btn next" aria-label="Next image">&#10095;</button>
+
+      <!-- Indicator dots injected by JS -->
+      <div class="slider-dots" role="tablist" aria-label="Slider navigation dots"></div>
+    </div>
+  </main>
+
+  <script src="slider.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const images = [
+        { src: 'https://picsum.photos/seed/slider1/1200/600', alt: 'Mountain landscape 1' },
+        { src: 'https://picsum.photos/seed/slider2/1200/600', alt: 'Mountain landscape 2' },
+        { src: 'https://picsum.photos/seed/slider3/1200/600', alt: 'Mountain landscape 3' },
+        { src: 'https://picsum.photos/seed/slider4/1200/600', alt: 'Mountain landscape 4' },
+        { src: 'https://picsum.photos/seed/slider5/1200/600', alt: 'City skyline at dusk' },
+      ];
+      new ImageSlider('#imageSlider', images);
+    });
+  </script>
+</body>
+</html>
